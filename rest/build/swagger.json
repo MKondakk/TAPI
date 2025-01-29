@@ -285,6 +285,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a list of patients",
 				"tags": [
 					"Patient"
 				],
@@ -350,6 +351,7 @@
 						}
 					}
 				},
+				"summary": "Create a new patient",
 				"tags": [
 					"Patient"
 				],
@@ -410,6 +412,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a specific patient by ID",
 				"tags": [
 					"Patient"
 				],
@@ -485,6 +488,7 @@
 						}
 					}
 				},
+				"summary": "Update an existing patient by ID",
 				"tags": [
 					"Patient"
 				],
@@ -546,6 +550,7 @@
 						}
 					}
 				},
+				"summary": "Delete a patient by ID",
 				"tags": [
 					"Patient"
 				],
@@ -611,6 +616,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a list of owners",
 				"tags": [
 					"Owner"
 				],
@@ -669,6 +675,7 @@
 						}
 					}
 				},
+				"summary": "Create a new owner",
 				"tags": [
 					"Owner"
 				],
@@ -732,6 +739,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a specific owner by ID",
 				"tags": [
 					"Owner"
 				],
@@ -810,6 +818,7 @@
 						}
 					}
 				},
+				"summary": "Update an existing owner by ID",
 				"tags": [
 					"Owner"
 				],
@@ -871,6 +880,7 @@
 						}
 					}
 				},
+				"summary": "Delete an owner by ID",
 				"tags": [
 					"Owner"
 				],
@@ -907,7 +917,7 @@
 													"lastName": "Pawel"
 												},
 												"specialization": "Internista",
-												"hireDate": "2025-01-29T07:37:15.417Z",
+												"hireDate": "2025-01-29T12:54:08.290Z",
 												"email": "jan.pawel@clinic.com",
 												"phone": "611892343"
 											}
@@ -938,6 +948,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a list of doctors",
 				"tags": [
 					"Doctor"
 				],
@@ -961,7 +972,7 @@
 												"lastName": "Pawel"
 											},
 											"specialization": "Internista",
-											"hireDate": "2025-01-29T07:37:15.418Z",
+											"hireDate": "2025-01-29T12:54:08.291Z",
 											"email": "jan.pawel@clinic.com",
 											"phone": "611892343"
 										}
@@ -998,6 +1009,7 @@
 						}
 					}
 				},
+				"summary": "Create a new doctor",
 				"tags": [
 					"Doctor"
 				],
@@ -1033,7 +1045,7 @@
 												"lastName": "Pawel"
 											},
 											"specialization": "Internista",
-											"hireDate": "2025-01-29T07:37:15.418Z",
+											"hireDate": "2025-01-29T12:54:08.291Z",
 											"email": "jan.pawel@clinic.com",
 											"phone": "611892343"
 										}
@@ -1063,6 +1075,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a specific doctor by ID",
 				"tags": [
 					"Doctor"
 				],
@@ -1096,7 +1109,7 @@
 												"lastName": "Pawel"
 											},
 											"specialization": "Internista",
-											"hireDate": "2025-01-29T07:37:15.421Z",
+											"hireDate": "2025-01-29T12:54:08.294Z",
 											"email": "jan.pawel@clinic.com",
 											"phone": "611892343"
 										}
@@ -1143,6 +1156,7 @@
 						}
 					}
 				},
+				"summary": "Update an existing doctor by ID",
 				"tags": [
 					"Doctor"
 				],
@@ -1204,6 +1218,7 @@
 						}
 					}
 				},
+				"summary": "Delete a doctor by ID",
 				"tags": [
 					"Doctor"
 				],
@@ -1237,7 +1252,7 @@
 												"id": 123,
 												"patientId": 10,
 												"doctorId": 3,
-												"date": "2025-01-29T07:37:15.422Z",
+												"date": "2025-01-29T12:54:08.295Z",
 												"status": "scheduled"
 											}
 										]
@@ -1267,6 +1282,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a list of appointments",
 				"tags": [
 					"Appointment"
 				],
@@ -1306,7 +1322,7 @@
 											"id": 123,
 											"patientId": 10,
 											"doctorId": 3,
-											"date": "2025-01-29T07:37:15.424Z",
+											"date": "2025-01-29T12:54:08.297Z",
 											"status": "scheduled"
 										}
 									}
@@ -1342,6 +1358,7 @@
 						}
 					}
 				},
+				"summary": "Create a new appointment",
 				"tags": [
 					"Appointment"
 				],
@@ -1374,7 +1391,7 @@
 											"id": 123,
 											"patientId": 10,
 											"doctorId": 3,
-											"date": "2025-01-29T07:37:15.424Z",
+											"date": "2025-01-29T12:54:08.296Z",
 											"status": "scheduled"
 										}
 									}
@@ -1403,6 +1420,7 @@
 						}
 					}
 				},
+				"summary": "Retrieve a specific appointment by ID",
 				"tags": [
 					"Appointment"
 				],
@@ -1433,7 +1451,7 @@
 											"id": 123,
 											"patientId": 10,
 											"doctorId": 3,
-											"date": "2025-01-29T07:37:15.428Z",
+											"date": "2025-01-29T12:54:08.300Z",
 											"status": "scheduled"
 										}
 									}
@@ -1479,6 +1497,7 @@
 						}
 					}
 				},
+				"summary": "Update an existing appointment by ID",
 				"tags": [
 					"Appointment"
 				],
@@ -1540,6 +1559,7 @@
 						}
 					}
 				},
+				"summary": "Delete an appointment by ID",
 				"tags": [
 					"Appointment"
 				],
