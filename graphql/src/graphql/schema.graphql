@@ -1,0 +1,211 @@
+scalar Date
+scalar Email
+
+type Owner {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  contactNumber: String!
+  address: String
+  patients: [Patient!]!
+}
+
+type Patient {
+  id: ID!
+  owner: Owner!
+  name: String!
+  species: Species!
+  breed: String
+  age: Int
+  appointments: [Appointment!]!
+}
+
+enum Species {
+  cat
+  dog
+  rabbit
+  guineapig
+  parrot
+}
+
+type Doctor {
+  id: ID!
+  firstName: String!
+  middleName: String
+  lastName: String!
+  specialization: String!
+  email: Email
+  phone: String
+  hireDate: Date!
+  appointments: [Appointment!]!
+}
+
+type Appointment {
+  id: ID!
+  patient: Patient!
+  doctor: Doctor!
+  date: Date!
+  reason: String
+  status: Status!
+}
+
+enum Status {
+  scheduled
+  completed
+}
+
+type Query {
+  getOwners(filter: OwnerFilter, limit: Int, offset: Int, orderBy: String): [Owner!]!
+  getOwner(id: ID!): Owner
+  getPatients(filter: PatientFilter, limit: Int, offset: Int, orderBy: String): [Patient!]!
+  getPatient(id: ID!): Patient
+  getDoctors(filter: DoctorFilter, limit: Int, offset: Int, orderBy: String): [Doctor!]!
+  getDoctor(id: ID!): Doctor
+  getAppointments(filter: AppointmentFilter, limit: Int, offset: Int, orderBy: String): [Appointment!]!
+  getAppointment(id: ID!): Appointment
+}
+
+type Mutation {
+  createOwner(input: CreateOwnerInput!): Owner!
+  updateOwner(id: ID!, input: UpdateOwnerInput!): Owner!
+  deleteOwner(id: ID!): Boolean!
+  createPatient(input: CreatePatientInput!): Patient!
+  updatePatient(id: ID!, input: UpdatePatientInput!): Patient!
+  deletePatient(id: ID!): Boolean!
+  createDoctor(input: CreateDoctorInput!): Doctor!
+  updateDoctor(id: ID!, input: UpdateDoctorInput!): Doctor!
+  deleteDoctor(id: ID!): Boolean!
+  createAppointment(input: CreateAppointmentInput!): Appointment!
+  updateAppointment(id: ID!, input: UpdateAppointmentInput!): Appointment!
+  deleteAppointment(id: ID!): Boolean!
+}
+
+input CreateOwnerInput {
+  firstName: String!
+  middleName: String
+  lastName: String!
+  contactNumber: String!
+  address: String
+}
+
+input UpdateOwnerInput {
+  firstName: String
+  middleName: String
+  lastName: String
+  contactNumber: String
+  address: String
+}
+
+input CreatePatientInput {
+  ownerId: ID!
+  name: String!
+  species: Species!
+  breed: String
+  age: Int
+}
+
+input UpdatePatientInput {
+  ownerId: ID
+  name: String
+  species: Species
+  breed: String
+  age: Int
+}
+
+input CreateDoctorInput {
+  firstName: String!
+  middleName: String
+  lastName: String!
+  specialization: String!
+  email: Email
+  phone: String
+  hireDate: Date!
+}
+
+input UpdateDoctorInput {
+  firstName: String
+  middleName: String
+  lastName: String
+  specialization: String
+  email: Email
+  phone: String
+  hireDate: Date
+}
+
+input CreateAppointmentInput {
+  patientId: ID!
+  doctorId: ID!
+  date: Date!
+  reason: String
+  status: Status!
+}
+
+input UpdateAppointmentInput {
+  patientId: ID
+  doctorId: ID
+  date: Date
+  reason: String
+  status: Status
+}
+
+input OwnerFilter {
+  contactNumber: StringFilter
+}
+
+input PatientFilter {
+  ownerId: IDFilter
+  species: SpeciesFilter
+  age: IntFilter
+  name: StringFilter
+}
+
+input DoctorFilter {
+  firstName: StringFilter
+  lastName: StringFilter
+  specialization: StringFilter
+  hireDate: DateFilter
+}
+
+input AppointmentFilter {
+  doctorId: IDFilter
+  patientId: IDFilter
+  status: StatusFilter
+  date: DateFilter
+}
+
+input IDFilter {
+  equal: ID
+  notEqual: ID
+}
+
+input StringFilter {
+  equal: String
+  notEqual: String
+  contains: String
+  notContains: String
+}
+
+input IntFilter {
+  equal: Int
+  greaterThan: Int
+  lessThan: Int
+  greaterOrEqual: Int
+  lessOrEqual: Int
+}
+
+input SpeciesFilter {
+  equal: Species
+  notEqual: Species
+}
+
+input StatusFilter {
+  equal: Status
+  notEqual: Status
+}
+
+input DateFilter {
+  equal: Date
+  greaterThan: Date
+  lessThan: Date
+}
